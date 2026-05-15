@@ -4,13 +4,25 @@ Personal CLI for the Monday.com GraphQL API.
 
 ## Install
 
+Requires `git`, `node` (≥18), and `npm` already installed.
+
+**One-liner** (clones to `~/.monday-cli`, builds, links the `monday` binary onto your PATH):
+
 ```bash
-git clone git@github.com:brendanfmartin/monday-cli.git
+curl -fsSL https://raw.githubusercontent.com/brendanfmartin/monday-cli/main/install.sh | bash
+```
+
+Override the install location with `MONDAY_CLI_HOME=/some/path bash` if you want it elsewhere.
+
+**Or clone first** (lets you read the script before running it, and gives you a working tree to hack on):
+
+```bash
+git clone https://github.com/brendanfmartin/monday-cli.git
 cd monday-cli
 ./install.sh
 ```
 
-`install.sh` runs `npm install`, `npm run build`, and `npm link` so the `monday` binary ends up on your PATH.
+**Updating:** re-run the same one-liner, or `bash ~/.monday-cli/install.sh`. The script detects an existing checkout, pulls `main`, rebuilds, and re-links.
 
 ## Auth
 
