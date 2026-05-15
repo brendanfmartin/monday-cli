@@ -5,25 +5,29 @@ Personal CLI for the Monday.com GraphQL API.
 ## Install
 
 ```bash
-cd /Volumes/T9/Sites/monday-cli
-npm install
-npm run build
-npm link
+git clone git@github.com:brendanfmartin/monday-cli.git
+cd monday-cli
+./install.sh
 ```
 
-`monday` is now on PATH.
+`install.sh` runs `npm install`, `npm run build`, and `npm link` so the `monday` binary ends up on your PATH.
 
 ## Auth
 
-Reads `MONDAY_API_TOKEN` from the environment. Put it in `~/.zshenv`:
+The CLI reads `MONDAY_API_TOKEN` from the shell environment. Export it from whichever shell config file you use — common spots:
 
-```bash
+- zsh → `~/.zshenv` (recommended; loaded by interactive *and* non-interactive shells) or `~/.zshrc`
+- bash → `~/.bashrc` or `~/.bash_profile`
+
+```sh
 export MONDAY_API_TOKEN='...'
 ```
 
+Restart your shell (or `source` the file) after adding it.
+
 ## First-time setup
 
-The CLI ships with **no built-in aliases**. Discover your boards and add the ones you use often:
+Set up aliases for the boards and groups you use often. Aliases let you type `monday list marketing --group in-progress` instead of memorising numeric IDs.
 
 ```bash
 monday boards                                    # list active boards on your account
@@ -32,7 +36,7 @@ monday config set-group in-progress group_mm347gec
 monday config show                               # see what's configured
 ```
 
-Config file: `~/.config/monday-cli/config.json`. Edit it directly or via the `config` subcommands. Numeric IDs always work too — aliases are pure ergonomics.
+Aliases live in `~/.config/monday-cli/config.json` — edit it directly or via the `config` subcommands. Numeric IDs always work too, so aliases are pure ergonomics.
 
 ## Commands
 

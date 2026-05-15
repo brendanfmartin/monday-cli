@@ -15,7 +15,7 @@ export async function mondayRequest<T = unknown>(
   const token = process.env.MONDAY_API_TOKEN;
   if (!token) {
     throw new Error(
-      "MONDAY_API_TOKEN not set — add `export MONDAY_API_TOKEN=...` to ~/.zshenv",
+      "MONDAY_API_TOKEN not set — export it from your shell config (e.g. ~/.zshenv, ~/.zshrc, ~/.bashrc, or ~/.bash_profile)",
     );
   }
 
