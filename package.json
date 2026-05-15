@@ -1,0 +1,25 @@
+{
+  "name": "monday-cli",
+  "version": "0.1.0",
+  "description": "Personal CLI for the Monday.com GraphQL API",
+  "type": "module",
+  "bin": {
+    "monday": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc && chmod +x dist/cli.js",
+    "prepare": "tsc && chmod +x dist/cli.js",
+    "dev": "node --import tsx src/cli.ts"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "commander": "^12.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.6.0"
+  }
+}
